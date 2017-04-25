@@ -6,8 +6,8 @@ object Main {
   def main(args: Array[String]): Unit = {
     def readLines(lines : Seq[String] = Seq.empty)  : Seq[String] = {
       val line: String = StdIn.readLine()
-      if(line == "") lines
-      else readLines(lines :+ line)
+      if(line != null) readLines(lines :+ line)
+      else lines
     }
 
     readLines().foreach{text =>
